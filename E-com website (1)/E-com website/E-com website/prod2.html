@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samsung Galaxy S24 - SM Mobiles</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="product.css"/>
+  <style>
+    .product-info h1 {
+      font-size: 30px;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .product-info .price {
+      font-size: 22px;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .product-features li {
+      color: #ffffff;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.jpg" alt="logo" class="logo" />
+    </div>
+    <div class="header-actions">
+      <button class="auth-btn">Login</button>
+      <button class="auth-btn">Register</button>
+    </div>
+  </header>
+
+  <!-- Product Details Section -->
+  <section class="product-page">
+    <div class="product-container">
+      <div class="product-image">
+        <img src="images/prod2.jpg" alt="Samsung Galaxy S24">
+      </div>
+      <div class="product-info">
+        <h1>Samsung Galaxy S24</h1>
+        <p class="price">₹79,999</p>
+        <ul class="product-features">
+          <li>128GB / 256GB / 512GB Storage</li>
+          <li>50MP Triple Camera</li>
+          <li>Snapdragon 8 Gen 3</li>
+          <li>8GB / 12GB RAM</li>
+          <li>4000mAh Battery</li>
+          <li>Dynamic AMOLED 2X Display</li>
+          <li>Android 14 with One UI</li>
+        </ul>
+        <!-- Add to Cart Button -->
+        <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy">&copy; 2025 SM Mobiles. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Add to Cart Script -->
+  <script>
+    function addToCart() {
+      const product = {
+        id: "samsung-s24",
+        name: "Samsung Galaxy S24",
+        price: 79999,
+        image: "images/prod2.jpg",
+        features: [
+          "128GB / 256GB / 512GB Storage",
+          "50MP Triple Camera",
+          "Snapdragon 8 Gen 3",
+          "8GB / 12GB RAM",
+          "4000mAh Battery",
+          "Dynamic AMOLED 2X Display",
+          "Android 14 with One UI"
+        ]
+      };
+      localStorage.setItem("cartProduct", JSON.stringify(product));
+      window.location.href = "cart.html";
+    }
+  </script>
+
+</body>
+</html>

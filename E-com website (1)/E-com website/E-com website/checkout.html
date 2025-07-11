@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - SM Mobiles</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="product.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .checkout-container {
+      background: url('images/thankyou-bg.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .checkout-form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .checkout-form h2 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #000;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .thank-you-message {
+      display: none;
+      text-align: center;
+      color: green;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-container">
+    <form class="checkout-form" id="checkoutForm" onsubmit="submitForm(event)">
+      <h2>Enter Delivery Details</h2>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required pattern="[0-9]{10}" />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Full Address</label>
+        <textarea id="address" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Mode</label>
+        <select id="payment" required>
+          <option value="">-- Select --</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Place Order</button>
+      <div class="thank-you-message" id="thankYou">✔️ Thank you for your order! It will be delivered soon.</div>
+    </form>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      // Optionally validate or save data
+
+      // Show thank you message
+      document.getElementById('thankYou').style.display = 'block';
+
+      // Optionally hide form
+      document.getElementById('checkoutForm').reset();
+    }
+  </script>
+
+</body>
+</html>
